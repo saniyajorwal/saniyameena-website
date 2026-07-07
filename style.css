@@ -1,1 +1,130 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@300;400;600&display=swap');
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:
+    radial-gradient(circle at top,#1c1c1c,#050505);
+
+    color:white;
+
+    font-family:'Poppins',sans-serif;
+
+    height:100vh;
+
+    overflow:hidden;
+}
+
+.hero{
+
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.warning{
+
+    color:#ff2d55;
+
+    font-size:1.8rem;
+
+    letter-spacing:4px;
+
+    margin-bottom:25px;
+
+    animation:flash .8s infinite;
+}
+
+.hero h1{
+
+    font-family:'Bangers',cursive;
+
+    font-size:8rem;
+
+    color:#00f5ff;
+
+    letter-spacing:8px;
+
+    text-shadow:
+    0 0 10px #00f5ff,
+    0 0 30px #00f5ff,
+    0 0 60px #00f5ff;
+
+}
+
+.hero h2{
+
+    margin-top:15px;
+
+    font-size:2rem;
+
+    letter-spacing:3px;
+
+}
+
+.hero p{
+
+    margin-top:25px;
+
+    color:#cccccc;
+
+    font-size:1.2rem;
+
+}
+
+button{
+
+    margin-top:45px;
+
+    padding:18px 60px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#ffcc00;
+
+    color:black;
+
+    font-size:1.2rem;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:scale(1.1);
+
+    box-shadow:0 0 30px #ffcc00;
+
+}
+
+@keyframes flash{
+
+    50%{
+
+        opacity:.2;
+
+    }
+
+}
