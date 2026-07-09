@@ -434,3 +434,126 @@ opacity:0;
 }
 
 }
+/* ================= MENU ================= */
+
+.menu-page{
+
+min-height:100vh;
+
+padding:60px;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.menu-title{
+
+font-family:'Bangers',cursive;
+
+font-size:5rem;
+
+letter-spacing:6px;
+
+color:#00F5FF;
+
+text-shadow:0 0 20px #00F5FF;
+
+}
+
+.menu-subtitle{
+
+margin-top:15px;
+
+color:#bbbbbb;
+
+margin-bottom:50px;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+gap:30px;
+
+width:min(1100px,95%);
+
+}
+
+.menu-card{
+
+background:rgba(255,255,255,.05);
+
+border:2px solid rgba(255,255,255,.1);
+
+border-radius:20px;
+
+padding:35px;
+
+text-align:center;
+
+transition:.35s;
+
+backdrop-filter:blur(10px);
+
+cursor:pointer;
+
+}
+
+.menu-card:hover{
+
+transform:translateY(-10px) scale(1.05);
+
+border-color:#00F5FF;
+
+box-shadow:0 0 25px #00F5FF55;
+
+}
+
+.menu-card h2{
+
+margin:15px 0;
+
+}
+
+.menu-card p{
+
+color:#bdbdbd;
+
+line-height:1.6;
+
+}
+
+.backBtn{
+
+margin-top:50px;
+
+text-decoration:none;
+
+color:white;
+
+padding:15px 40px;
+
+background:#7a5cff;
+
+border-radius:50px;
+
+transition:.3s;
+
+}
+
+.backBtn:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 20px #7a5cff;
+
+}
