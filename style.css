@@ -1,5 +1,15 @@
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@300;400;600;700&display=swap');
+
+:root{
+    --bg:#050505;
+    --bg2:#101018;
+    --cyan:#00F5FF;
+    --pink:#ff2d92;
+    --yellow:#ffd400;
+    --purple:#7a5cff;
+    --white:#ffffff;
+    --gray:#bdbdbd;
+}
 
 *{
     margin:0;
@@ -7,19 +17,57 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
 
+    overflow:hidden;
+
     background:
-    radial-gradient(circle at top,#1c1c1c,#050505);
+    radial-gradient(circle at top,var(--bg2),var(--bg));
 
     color:white;
 
     font-family:'Poppins',sans-serif;
 
-    height:100vh;
+    min-height:100vh;
 
-    overflow:hidden;
+    position:relative;
+
 }
+
+/* ===========================
+      CURSOR GLOW
+=========================== */
+
+#cursorGlow{
+
+    width:250px;
+    height:250px;
+
+    position:fixed;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+    rgba(0,245,255,.35),
+    transparent 70%);
+
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+
+    z-index:1;
+
+    transition:.08s;
+
+}
+
+/* ===========================
+      HERO
+=========================== */
 
 .hero{
 
@@ -35,96 +83,354 @@ body{
 
     text-align:center;
 
+    position:relative;
+
+    z-index:5;
+
+    padding:30px;
+
 }
 
 .warning{
 
-    color:#ff2d55;
+    color:var(--pink);
 
-    font-size:1.8rem;
+    font-size:2rem;
 
-    letter-spacing:4px;
+    letter-spacing:5px;
 
-    margin-bottom:25px;
+    font-weight:bold;
 
     animation:flash .8s infinite;
+
 }
 
-.hero h1{
+.title{
+
+    margin-top:20px;
 
     font-family:'Bangers',cursive;
 
-    font-size:8rem;
+    font-size:9rem;
 
-    color:#00f5ff;
+    color:var(--cyan);
 
     letter-spacing:8px;
 
     text-shadow:
-    0 0 10px #00f5ff,
-    0 0 30px #00f5ff,
-    0 0 60px #00f5ff;
+    0 0 10px var(--cyan),
+    0 0 25px var(--cyan),
+    0 0 60px var(--cyan);
+
+    animation:float 4s ease-in-out infinite;
 
 }
 
-.hero h2{
+.subtitle{
 
-    margin-top:15px;
+    margin-top:10px;
 
     font-size:2rem;
 
-    letter-spacing:3px;
+    letter-spacing:4px;
 
 }
 
-.hero p{
+#quote{
 
-    margin-top:25px;
+    margin-top:30px;
 
-    color:#cccccc;
+    max-width:700px;
 
-    font-size:1.2rem;
+    color:var(--gray);
+
+    line-height:1.7;
+
+    font-size:1.15rem;
 
 }
 
-button{
+/* ===========================
+      BUTTON
+=========================== */
+
+#enterBtn{
 
     margin-top:45px;
 
-    padding:18px 60px;
+    background:linear-gradient(
+    45deg,
+    var(--yellow),
+    orange);
 
     border:none;
 
+    color:black;
+
+    padding:18px 70px;
+
     border-radius:50px;
 
-    background:#ffcc00;
-
-    color:black;
+    cursor:pointer;
 
     font-size:1.2rem;
 
     font-weight:bold;
 
-    cursor:pointer;
+    transition:.35s;
 
-    transition:.3s;
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+#enterBtn:hover{
+
+    transform:translateY(-5px) scale(1.05);
+
+    box-shadow:
+    0 0 15px var(--yellow),
+    0 0 40px orange;
 
 }
 
-button:hover{
+#enterBtn:active{
 
-    transform:scale(1.1);
-
-    box-shadow:0 0 30px #ffcc00;
+    transform:scale(.95);
 
 }
+
+#enterBtn span{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+#enterBtn::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:100%;
+
+    left:0;
+
+    top:0;
+
+    background:white;
+
+    opacity:.25;
+
+    transition:.5s;
+
+}
+
+#enterBtn:hover::before{
+
+    width:100%;
+
+}
+
+/* ===========================
+      COMIC WORDS
+=========================== */
+
+.comic-left,
+.comic-right,
+.comic-bottom{
+
+    position:absolute;
+
+    font-family:'Bangers',cursive;
+
+    font-size:4rem;
+
+    opacity:.08;
+
+    pointer-events:none;
+
+}
+
+.comic-left{
+
+    left:50px;
+
+    top:120px;
+
+    color:#ff4040;
+
+    transform:rotate(-18deg);
+
+}
+
+.comic-right{
+
+    right:60px;
+
+    top:160px;
+
+    color:var(--yellow);
+
+    transform:rotate(15deg);
+
+}
+
+.comic-bottom{
+
+    bottom:70px;
+
+    left:120px;
+
+    color:var(--cyan);
+
+}
+
+/* ===========================
+      CORNERS
+=========================== */
+
+.corner{
+
+    width:160px;
+    height:160px;
+
+    position:absolute;
+
+    border:4px solid rgba(255,255,255,.08);
+
+}
+
+.one{
+
+    left:-80px;
+    top:-80px;
+
+    border-radius:50%;
+
+}
+
+.two{
+
+    right:-80px;
+    top:-80px;
+
+    border-radius:50%;
+
+}
+
+.three{
+
+    left:-80px;
+    bottom:-80px;
+
+    border-radius:50%;
+
+}
+
+.four{
+
+    right:-80px;
+    bottom:-80px;
+
+    border-radius:50%;
+
+}
+
+/* ===========================
+      PARTICLES
+=========================== */
+
+#particles{
+
+    position:fixed;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    z-index:0;
+
+}
+
+.particle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:white;
+
+    opacity:.25;
+
+    animation:rise linear infinite;
+
+}
+
+/* ===========================
+      ANIMATIONS
+=========================== */
 
 @keyframes flash{
 
-    50%{
+50%{
 
-        opacity:.2;
+opacity:.2;
 
-    }
+}
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes rise{
+
+0%{
+
+transform:translateY(100vh);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:.35;
+
+}
+
+100%{
+
+transform:translateY(-120vh);
+
+opacity:0;
+
+}
 
 }
